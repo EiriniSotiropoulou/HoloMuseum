@@ -10,7 +10,6 @@ using Microsoft.MixedReality.Toolkit.UI;
 public class MainManager : MonoBehaviour
 {
     
-    public static bool museum = false;
     public GameObject quiz;
     public GameObject intro;
     public GameObject arts;
@@ -19,8 +18,9 @@ public class MainManager : MonoBehaviour
     public GameObject introPrefab;
     public GameObject quizPrefab;
 
-    public AnswerTriple[] answers ;
-    public bool activeQuiz; //shows if an answering session is on
+    public AnswerTriple[] answers; //all answers of a quiz session
+
+    public bool activeQuiz; //indicates if an answering session is on
 
 
     void Awake()
@@ -37,8 +37,8 @@ public class MainManager : MonoBehaviour
         If museum is true the digital artifacts are invisible*/
         if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime"))
         {
-            populateArt();
-            PlaceArt(museum);
+            PopulateArt();
+            PlaceArt();
             //arts.SetActive(true);
             //PlayerPrefs.SetInt("FirstTime", 1);
         }
@@ -52,8 +52,9 @@ public class MainManager : MonoBehaviour
 
     }
 
-    void populateArt() {
+    void PopulateArt() {
 
+        
         var ArtCollection = ArtContainer.Load(Path.Combine(Application.dataPath, "Resources/data.xml"));
         foreach(Art art in ArtCollection.Arts)
         {
@@ -75,9 +76,13 @@ public class MainManager : MonoBehaviour
             //add image
             myArt.transform.Find("image").Find("RawImage").GetComponent<RawImage>().texture = Resources.Load<Texture>(art.image);
 
+            myArt.gameObject.SetActive(false);
+            //add art to list
+
         }
 
         
+
     }
 
     void populateIntro()
@@ -168,15 +173,48 @@ public class MainManager : MonoBehaviour
 
     }
 
-
-    void PlaceArt(bool museum)
+    void show()
     {
-        
-        Debug.Log("placing art...");
-        
-
+        foreach (Transform child in arts.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
     }
+    void hide()
+    {
+        foreach (Transform child in arts.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+    void PlaceArt()
+    //All of the artifacts have an instance of the ArtPrefab that must be placed by the developer before the first session
+    //if the physical space is the museum ,the digital artifacts are invisible and are placed manually right at the physical artifact 
+    //so the app can locate where it is positioned
+    //voice commands: hide/show 
 
+    {
+        int count = arts.transform.childCount;
+
+        Debug.Log("placing art...");
+
+        arts.SetActive(true);
+
+        //place the artifacts in a circle around the developer
+        //they will place them using the tap and place component 
+
+        var radius = 0.5f;
+
+        int i = 0;
+        foreach (Transform child in arts.transform)
+        {
+            var angle = i * Mathf.PI * 2 / count;
+            var pos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
+            child.gameObject.SetActive(true);
+            child.transform.position = pos;
+            i++;
+        }
+    }
 
 
 
@@ -310,7 +348,11 @@ public class MainManager : MonoBehaviour
      * populate quiz + quiz layout #Done
      * quiz logic and data correction #DONE
      * quiz buttons for answers #DONE
-     * artifacts placing logic
+     * artifacts placing logic #DONE
+     * application's flow. check files not needed
+     * make two versions for museum or not.. 
+     * the first hides artifacts when application starts
+     * voice commands for hide show
      * data collection
      * check with hololens + style
      */

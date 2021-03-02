@@ -448,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b15210a4070a4eb8acf34ee210840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvisible: 0
   number: 0
   category: 
 --- !u!114 &6987092413465362183
@@ -473,7 +472,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4517040046959094890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1e1c3953429c5e4fb804cd997540db9, type: 3}
   m_Name: 
@@ -485,22 +484,44 @@ MonoBehaviour:
   maintainScale: 1
   smoothing: 1
   lifetime: 0
-  autoStart: 1
+  autoStart: 0
   defaultPlacementDistance: 1.5
   maxRaycastDistance: 20
   surfaceNormalOffset: 0
-  keepOrientationVertical: 0
-  rotateAccordingToSurface: 0
+  keepOrientationVertical: 1
+  rotateAccordingToSurface: 1
   magneticSurfaces:
   - serializedVersion: 2
     m_Bits: 4294967291
   debugEnabled: 1
   onPlacingStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987092413465362176}
+        m_MethodName: onPickUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPlacingStopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6987092413465362176}
+        m_MethodName: onPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6987092413465362181
 MonoBehaviour:
   m_ObjectHideFlags: 0
