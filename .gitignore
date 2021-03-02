@@ -13,6 +13,7 @@
 Assets/MRTK
 *.sln
 *.obj
+*.csproj
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
