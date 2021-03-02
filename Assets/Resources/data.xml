@@ -1,0 +1,139 @@
+﻿<?xml version='1.0'  
+	  encoding='UTF-8' 
+	  standalone="yes"?>
+
+<App>
+	<intro>
+
+		<page number = "0">
+			<image>Pictures/Classical</image>
+
+			<dialogue>Classical1!</dialogue>
+			<directional>0</directional>
+
+		</page>
+
+		<page number = "1">
+
+			<image>Pictures/Hellenistic</image>
+
+			<dialogue>Hellenistic2</dialogue>
+			<directional>1</directional>
+
+		</page>
+
+		<page number = "2">
+
+			<image>Pictures/Geometric</image>
+
+			<dialogue>Geometric3</dialogue>
+			<directional>2</directional>
+
+		</page>
+
+
+	</intro>
+	<arts>
+
+		<art number="0" category="Classical">
+			
+			<decription>something about classical...</decription>
+
+			<image>Pictures/Classical</image>
+			
+		</art>
+
+		<art number="1" category="Hellenistic">
+
+			<decription>hellenistic...</decription>
+
+			<image>Pictures/Hellenistic</image>
+
+		</art>
+
+		<art number="2" category="Geometric">
+
+			<decription>geometric...</decription>
+
+			<image>Pictures/Geometric</image>
+
+		</art>
+		
+	</arts>
+	<quiz>
+		<page number="0">
+
+			<image>Pictures/Classical</image>
+			
+			<question>lalalalalalalalal</question>
+
+			<answer1 >lolololo</answer1>
+
+			<answer2 >lililili</answer2>
+
+			<answer3>lililili</answer3>
+
+			<answer4 >lolololo</answer4>
+
+			<correct>1</correct>
+
+			<directional>1</directional>
+			<directional1>0</directional1>
+			<directional2>1</directional2>
+			<directional3>2</directional3>
+			<directional4>3</directional4>
+			
+		</page>
+
+		<page number="1">
+
+			<image>Pictures/Hellenistic</image>
+
+			<question>lolololololololo</question>
+
+			<answer1 >lolololo</answer1>
+
+			<answer2 >lililili</answer2>
+
+			<answer3>lililili</answer3>
+
+			<answer4 >lolololo</answer4>
+
+			<correct>1</correct>
+
+			<directional>2</directional>
+			<directional1>0</directional1> 
+			<directional2>1</directional2>
+			<directional3>2</directional3>
+			<directional4>3</directional4>
+
+		</page>
+
+		<page number="2">
+
+			<image>Pictures/Geometric</image>
+
+			<question>lilililililili</question>
+
+			<answer1 >lolololo</answer1>
+
+			<answer2 >lililili</answer2>
+
+			<answer3>lililili</answer3>
+
+			<answer4 >lolololo</answer4>
+
+			<correct>1</correct>
+
+			<directional>0</directional>
+			<directional1>0</directional1>
+			<directional2>1</directional2>
+			<directional3>2</directional3>
+			<directional4>3</directional4>
+
+		</page>
+
+
+	</quiz>
+
+</App>
