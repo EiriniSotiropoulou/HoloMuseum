@@ -60,7 +60,6 @@
      <Compile Include="Assets\MyScripts\ArtContainer.cs" />
      <Compile Include="Assets\MyScripts\ArtController.cs" />
      <Compile Include="Assets\MyScripts\DirectionalIndicator.cs" />
-     <Compile Include="Assets\MyScripts\IntroButtonHandler.cs" />
      <Compile Include="Assets\MyScripts\IntroContainer.cs" />
      <Compile Include="Assets\MyScripts\IntroPage.cs" />
      <Compile Include="Assets\MyScripts\IntroPageController.cs" />

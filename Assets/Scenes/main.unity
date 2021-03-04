@@ -190,6 +190,7 @@ MonoBehaviour:
     type: 3}
   quizPrefab: {fileID: 7660791265767987792, guid: 3fe044cb3323b5a48b2d84fbabf20b32,
     type: 3}
+  activeQuiz: 0
 --- !u!114 &402168702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,12 +205,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFocusRequired: 0
   keywords:
-  - keyword: Start Quiz
+  - keyword: Quiz
     response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 402168701}
           m_MethodName: StartQuiz
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keyword: Start
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 402168701}
+          m_MethodName: StartIntro
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keyword: Show
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 402168701}
+          m_MethodName: show
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keyword: Hide
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 402168701}
+          m_MethodName: hide
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

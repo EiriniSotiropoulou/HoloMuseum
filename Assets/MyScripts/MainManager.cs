@@ -26,30 +26,27 @@ public class MainManager : MonoBehaviour
     void Awake()
     {
 
-        //We start by disabling all elements
+        //disable all elements at launch
         GameObject.Find("MixedRealityPlayspace/Diagnostics").SetActive(false);
-        //intro.SetActive(true);
-        //quiz.SetActive(false);
-        //arts.SetActive(true);/**/
+        intro.SetActive(false);
+        quiz.SetActive(false);
+        arts.SetActive(false);/**/
 
         /*At the first run of the app, the artifacts are populated and then
         the designer places them at the correct place. 
         If museum is true the digital artifacts are invisible*/
-        if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime"))
+        if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime")) 
         {
             PopulateArt();
             PlaceArt();
-            //arts.SetActive(true);
             //PlayerPrefs.SetInt("FirstTime", 1);
         }
         populateIntro();
-        //intro.SetActive(true);
-        intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
-
-        
-        quiz.SetActive(false);
-
-
+        if (PlayerPrefs.GetInt("FirstTime") == 1)
+        {
+            intro.SetActive(true);
+            intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
+        }
     }
 
     void PopulateArt() {
@@ -111,7 +108,7 @@ public class MainManager : MonoBehaviour
 
             //
 
-            GameObject ButtonLabel = myPage.transform.Find("Button").transform.GetChild(0).transform.Find("Label").gameObject;
+            GameObject ButtonLabel = myPage.transform.Find("ButtonNext").transform.GetChild(0).transform.Find("Label").gameObject;
 
             if (page.number == IntroPageCollection.Pages.Length-1) ButtonLabel.GetComponent<TextMesh>().text = "Finish";
             
@@ -173,14 +170,14 @@ public class MainManager : MonoBehaviour
 
     }
 
-    void show()
+    public void show() //artifacts are visible. used as voice command
     {
         foreach (Transform child in arts.transform)
         {
             child.gameObject.SetActive(true);
         }
     }
-    void hide()
+    public void hide() //artifacts are invisible. used as voice command
     {
         foreach (Transform child in arts.transform)
         {
@@ -216,6 +213,22 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    public void StartIntro()
+    {
+        GameObject camera = GameObject.Find("MixedRealityPlayspace").transform.Find("Main Camera").gameObject;
+
+        Debug.Log("starting quiz...");
+
+        intro.SetActive(true);
+
+        intro.transform.GetChild(0).gameObject.SetActive(true);
+
+        //place quiz in front of user, looking at the camera
+        intro.transform.GetChild(0).transform.position = camera.transform.position + camera.transform.forward * 0.5f + camera.transform.right * 0.4f;
+        intro.transform.GetChild(0).transform.LookAt(camera.transform, Vector3.up);
+
+
+    }
 
 
     public void StartQuiz() //start or restart quiz
@@ -342,19 +355,20 @@ public class MainManager : MonoBehaviour
 
 
     /* TO DO:
-     * github
+     * github #DONE
      * Populate art + image to texture #DONE
      * populate intro + intro layout #DONE
      * populate quiz + quiz layout #Done
      * quiz logic and data correction #DONE
      * quiz buttons for answers #DONE
      * artifacts placing logic #DONE
-     * application's flow. check files not needed
-     * make two versions for museum or not.. 
-     * the first hides artifacts when application starts
-     * voice commands for hide show
-     * data collection
-     * check with hololens + style
+     * application's flow. check files not needed #DONE
+     * make two versions for museum or not.. ---
+     * the first hides artifacts when application starts #DONE
+     * voice commands for hide show artifacts,intro #DONE
+     * data collection ---
+     * check with hololens .. --- second run are artifacts there? 
+     * style ---
      */
 
     /* IDEAS
@@ -376,15 +390,10 @@ public class MainManager : MonoBehaviour
      * diagnostics none active #done
      * place art only at first launch #done
      * ~Make Art latch on walls beggining~ 
-     * placing process
+     * placing process #DONE
      * voice command to start quiz #test!
-     * !Create layout for end Quiz! -
-     * 
-     * 
-     * Fix fuctionality from beggining to end 
-     * Test app with faux images and answers - 
-     * xml
-     * Style 
+     * !Create layout for end Quiz! #DONE
+
      */
 
 
@@ -403,13 +412,10 @@ public class MainManager : MonoBehaviour
 
     //fix : arrows, intro hover , placing on walls (latch) solvers?
 
-    /*arrow
+    /*arrow #DONE
      * na einai se ena epipedo zx
      * na einai stin katw deksia meria panta
-     * 
-     * 
-     * 
-     * 
+
      */
 
 

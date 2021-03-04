@@ -92,15 +92,15 @@ public class QuizPageController : MonoBehaviour
 
         gameObject.transform.parent.GetChild(index - 1).gameObject.SetActive(true); //activate previous page
 
-        // place next guide arrow at the same place as this one
+        // place previous guide arrow at the same place as this one
         if (index != 0)
         {
             gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
             gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.rotation = gameObject.transform.Find("GuideArrow").transform.rotation;
         }
-        gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
+       /* gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
         gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.rotation = gameObject.transform.Find("GuideArrow").transform.rotation;
-
+*/
         
     }
 
