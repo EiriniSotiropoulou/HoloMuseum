@@ -34,8 +34,8 @@ public class MainManager : MonoBehaviour
 
         /*At the first run of the app, the artifacts are populated and then
         the designer places them at the correct place. 
-        If museum is true the digital artifacts are invisible*/
-        if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime")) 
+       
+/*        if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime")) 
         {
             PopulateArt();
             PlaceArt();
@@ -47,6 +47,12 @@ public class MainManager : MonoBehaviour
             intro.SetActive(true);
             intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
         }
+    }*/
+        PopulateArt();
+        PlaceArt();
+        populateIntro();
+        intro.SetActive(true);
+        intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
     }
 
     void PopulateArt() {
@@ -109,9 +115,10 @@ public class MainManager : MonoBehaviour
             //
 
             GameObject ButtonLabel = myPage.transform.Find("ButtonNext").transform.GetChild(0).transform.Find("Label").gameObject;
+            GameObject ButtonPrevious = myPage.transform.Find("ButtonPrevious").gameObject;
 
             if (page.number == IntroPageCollection.Pages.Length-1) ButtonLabel.GetComponent<TextMesh>().text = "Finish";
-            
+            if (page.number == 0) ButtonPrevious.SetActive(false); // not previous button at the 1st page 
         }
     }
 
@@ -200,7 +207,7 @@ public class MainManager : MonoBehaviour
         //place the artifacts in a circle around the developer
         //they will place them using the tap and place component 
 
-        var radius = 0.5f;
+        var radius = 0.4f;
 
         int i = 0;
         foreach (Transform child in arts.transform)
@@ -312,6 +319,12 @@ public class MainManager : MonoBehaviour
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer2").GetComponent<Interactable>().IsToggled = false;
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer3").GetComponent<Interactable>().IsToggled = false;
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer4").GetComponent<Interactable>().IsToggled = false;
+
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer1").GetComponent<Interactable>().enabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer2").GetComponent<Interactable>().enabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer3").GetComponent<Interactable>().enabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer4").GetComponent<Interactable>().enabled = false;
+
 
 
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().IsToggled = true;

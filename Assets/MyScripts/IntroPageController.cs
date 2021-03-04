@@ -52,7 +52,7 @@ public class IntroPageController : MonoBehaviour
             gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
             gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.rotation = gameObject.transform.Find("GuideArrow").transform.rotation;
         }
-/*        gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
+/*      gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.position = gameObject.transform.Find("GuideArrow").transform.position;
         gameObject.transform.parent.GetChild(index - 1).Find("GuideArrow").transform.rotation = gameObject.transform.Find("GuideArrow").transform.rotation;
 
 */
