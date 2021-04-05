@@ -120,6 +120,7 @@ public class QuizPageController : MonoBehaviour
         else if (i3) selected = 3;
         else if (i4) selected = 4;
 
+        Debug.Log(selected);
         int[] message = { number, selected, correct };
         manager.SendMessage("SaveAnswer", message);
     }

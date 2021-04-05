@@ -749,17 +749,13 @@
       <Project>{873EA282-8FA0-65C4-0AFB-65F3CE4888F9}</Project>
       <Name>Microsoft.MixedReality.Toolkit.Services.DiagnosticsSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor.csproj">
-      <Project>{681CD2A4-A8C7-3DBE-4D3F-720EF774D67A}</Project>
-      <Name>Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Microsoft.MixedReality.Toolkit.Services.InputSystem.csproj">
-      <Project>{C728B57A-C3ED-75A5-2C5A-2DA74CC67D10}</Project>
-      <Name>Microsoft.MixedReality.Toolkit.Services.InputSystem</Name>
-    </ProjectReference>
     <ProjectReference Include="Microsoft.MixedReality.Toolkit.Providers.LeapMotion.csproj">
       <Project>{70D9BBFB-1FC3-AC04-4EF6-21C34DEC0C9F}</Project>
       <Name>Microsoft.MixedReality.Toolkit.Providers.LeapMotion</Name>
+    </ProjectReference>
+    <ProjectReference Include="Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor.csproj">
+      <Project>{681CD2A4-A8C7-3DBE-4D3F-720EF774D67A}</Project>
+      <Name>Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Microsoft.MixedReality.Toolkit.Gltf.Importers.csproj">
       <Project>{D503A6CE-6489-8C4F-61AB-3DB960250261}</Project>
@@ -796,6 +792,10 @@
     <ProjectReference Include="Microsoft.MixedReality.Toolkit.Editor.Utilities.csproj">
       <Project>{3AC404DA-65B1-6132-8320-9A5B92581D50}</Project>
       <Name>Microsoft.MixedReality.Toolkit.Editor.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="Microsoft.MixedReality.Toolkit.Services.InputSystem.csproj">
+      <Project>{C728B57A-C3ED-75A5-2C5A-2DA74CC67D10}</Project>
+      <Name>Microsoft.MixedReality.Toolkit.Services.InputSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Microsoft.MixedReality.Toolkit.Providers.XRSDK.csproj">
       <Project>{E16C51EA-3837-BA12-9B31-0B485E8B76E5}</Project>

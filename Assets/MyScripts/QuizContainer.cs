@@ -11,30 +11,39 @@ public class QuizContainer
     [XmlArray("quiz"), XmlArrayItem("page")]
     public QuizPage[] Pages;
 
-    public void Save(string path)
-    {
-        var serializer = new XmlSerializer(typeof(QuizContainer));
-        using (var stream = new FileStream(path, FileMode.Create))
-        {
-            serializer.Serialize(stream, this);
-        }
-    }
 
     public static QuizContainer Load(string path)
     {
         var serializer = new XmlSerializer(typeof(QuizContainer));
+        QuizContainer deserialized = null;
+        string path2;
+#if WINDOWS_UWP
+
+        path2 = Path.GetFullPath(Path.Combine(Application.persistentDataPath + "/" + "data.xml"));
+        try
+        {
+            using (FileStream reader = File.Open(path2, FileMode.Open))
+            {
+                return serializer.Deserialize(reader) as QuizContainer;
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarningFormat("Error loading animation : {0}", e.Message);
+            return deserialized;
+        }
+
+#else
+
         using (var stream = new FileStream(path, FileMode.Open))
         {
             return serializer.Deserialize(stream) as QuizContainer;
         }
-    }
 
-    //Loads the xml directly from the given string. Useful in combination with www.text.
-    public static QuizContainer LoadFromText(string text)
-    {
-        var serializer = new XmlSerializer(typeof(QuizContainer));
-        return serializer.Deserialize(new StringReader(text)) as QuizContainer;
+
+#endif
     }
 }
+
 
 

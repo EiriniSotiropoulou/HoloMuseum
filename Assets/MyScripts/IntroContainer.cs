@@ -12,30 +12,37 @@ public class IntroContainer
     public IntroPage[] Pages;
 
 
-    public void Save(string path)
-    {
-        var serializer = new XmlSerializer(typeof(IntroContainer));
-        using (var stream = new FileStream(path, FileMode.Create))
-        {
-            serializer.Serialize(stream, this);
-        }
-    }
-
     public static IntroContainer Load(string path)
     {
         var serializer = new XmlSerializer(typeof(IntroContainer));
+        IntroContainer deserialized = null;
+        string path2;
+#if WINDOWS_UWP
+
+        path2 = Path.GetFullPath(Path.Combine(Application.persistentDataPath + "/" + "data.xml"));
+        try
+        {
+            using (FileStream reader = File.Open(path2, FileMode.Open))
+            {
+                return serializer.Deserialize(reader) as IntroContainer;
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarningFormat("Error loading animation : {0}", e.Message);
+            return deserialized;
+        }
+
+#else
         using (var stream = new FileStream(path, FileMode.Open))
         {
             return serializer.Deserialize(stream) as IntroContainer;
         }
+
+#endif
+
     }
 
-    //Loads the xml directly from the given string. Useful in combination with www.text.
-    public static IntroContainer LoadFromText(string text)
-    {
-        var serializer = new XmlSerializer(typeof(IntroContainer));
-        return serializer.Deserialize(new StringReader(text)) as IntroContainer;
-    }
 }
 
 

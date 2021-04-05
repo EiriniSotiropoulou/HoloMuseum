@@ -9,7 +9,7 @@ public class QuizSolver : Solver
     public override void SolverUpdate()
     {
         //if gaze is on either intro label or button stop the intro window from moving
-        if (CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(0) || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(1))
+        if (CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(0).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(1).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(2).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(3).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(4).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(5).gameObject)
         {
             gameObject.GetComponent<RadialView>().enabled = false;
             //LogCurrentGazeTarget();

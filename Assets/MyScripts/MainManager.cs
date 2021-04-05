@@ -21,38 +21,38 @@ public class MainManager : MonoBehaviour
     public AnswerTriple[] answers; //all answers of a quiz session
 
     public bool activeQuiz; //indicates if an answering session is on
-
+    
 
     void Awake()
     {
-
+        
         //disable all elements at launch
         GameObject.Find("MixedRealityPlayspace/Diagnostics").SetActive(false);
-        intro.SetActive(false);
+       /* intro.SetActive(false);
         quiz.SetActive(false);
-        arts.SetActive(false);/**/
+        arts.SetActive(false);*/
 
         /*At the first run of the app, the artifacts are populated and then
         the designer places them at the correct place. 
        
-/*        if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime")) 
+/*     if (PlayerPrefs.GetInt("FirstTime")!=1 || !PlayerPrefs.HasKey("FirstTime")) 
         {
             PopulateArt();
             PlaceArt();
             //PlayerPrefs.SetInt("FirstTime", 1);
         }
-        populateIntro();
+
         if (PlayerPrefs.GetInt("FirstTime") == 1)
         {
             intro.SetActive(true);
             intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
-        }
-    }*/
+        }*/
+
         PopulateArt();
         PlaceArt();
-        populateIntro();
-        intro.SetActive(true);
-        intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
+        
+        //intro.SetActive(true);
+        //intro.transform.GetChild(0).gameObject.SetActive(true); //activate first page
     }
 
     void PopulateArt() {
@@ -77,7 +77,7 @@ public class MainManager : MonoBehaviour
             myArt.transform.GetComponent<ArtController>().category = art.category;
 
             //add image
-            myArt.transform.Find("image").Find("RawImage").GetComponent<RawImage>().texture = Resources.Load<Texture>(art.image);
+            //myArt.transform.Find("image").transform.Find("RawImage").GetComponent<RawImage>().texture = Resources.Load<Texture>(art.image);
 
             myArt.gameObject.SetActive(false);
             //add art to list
@@ -224,13 +224,17 @@ public class MainManager : MonoBehaviour
     {
         GameObject camera = GameObject.Find("MixedRealityPlayspace").transform.Find("Main Camera").gameObject;
 
-        Debug.Log("starting quiz...");
+        Debug.Log("starting intro...");
+
+        Empty(intro);
+
+        populateIntro();
 
         intro.SetActive(true);
 
         intro.transform.GetChild(0).gameObject.SetActive(true);
 
-        //place quiz in front of user, looking at the camera
+        //place intro in front of user, looking at the camera
         intro.transform.GetChild(0).transform.position = camera.transform.position + camera.transform.forward * 0.5f + camera.transform.right * 0.4f;
         intro.transform.GetChild(0).transform.LookAt(camera.transform, Vector3.up);
 
@@ -250,9 +254,8 @@ public class MainManager : MonoBehaviour
         //populate quiz
 
         Empty(quiz);
-        Debug.Log(quiz.transform.childCount);
         populateQuiz();
-
+        
         quiz.transform.GetChild(0).gameObject.SetActive(true); 
 
         //place quiz in front of user, looking at the camera
@@ -299,6 +302,8 @@ public class MainManager : MonoBehaviour
         ResPage.transform.Find("answer3").gameObject.SetActive(false);
         ResPage.transform.Find("answer4").gameObject.SetActive(false);
 
+        ResPage.transform.Find("ButtonPrevious").gameObject.SetActive(false);
+
         //compute and display percentage
 
         int percentage = 0;
@@ -315,19 +320,22 @@ public class MainManager : MonoBehaviour
             {
                 quiz.transform.Find("Page"+ ans.page).SetAsLastSibling();
 
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer1").GetComponent<Interactable>().IsEnabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer2").GetComponent<Interactable>().IsEnabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer3").GetComponent<Interactable>().IsEnabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer4").GetComponent<Interactable>().IsEnabled = false;
+
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer1").GetComponent<Interactable>().IsToggled = false;
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer2").GetComponent<Interactable>().IsToggled = false;
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer3").GetComponent<Interactable>().IsToggled = false;
                 quiz.transform.Find("Page" + ans.page).transform.Find("answer4").GetComponent<Interactable>().IsToggled = false;
 
-                quiz.transform.Find("Page" + ans.page).transform.Find("answer1").GetComponent<Interactable>().enabled = false;
-                quiz.transform.Find("Page" + ans.page).transform.Find("answer2").GetComponent<Interactable>().enabled = false;
-                quiz.transform.Find("Page" + ans.page).transform.Find("answer3").GetComponent<Interactable>().enabled = false;
-                quiz.transform.Find("Page" + ans.page).transform.Find("answer4").GetComponent<Interactable>().enabled = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().IsEnabled = true;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().SetToggled(true);
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().CanDeselect = false;
+                quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().CanSelect = false;
 
 
-
-                quiz.transform.Find("Page" + ans.page).transform.Find("answer" + ans.correct).GetComponent<Interactable>().IsToggled = true;
             }
 
 
@@ -438,7 +446,9 @@ public class MainManager : MonoBehaviour
      
      http://wiki.unity3d.com/index.php?title=Saving_and_Loading_Data:_XmlSerializer&_ga=2.18430000.845015915.1611851166-443249922.1599339853
      
-     
+    https://forums.hololens.com/discussion/6472/load-xml-files-on-hololens-in-runtime
+    https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-reading-and-writing-files
+    https://forums.hololens.com/discussion/comment/10580#Comment_10580'
      
      */
 }
