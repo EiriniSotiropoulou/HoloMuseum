@@ -66,11 +66,11 @@
      <Compile Include="Assets\MyScripts\IntroPageController.cs" />
      <Compile Include="Assets\MyScripts\MainManager.cs" />
      <Compile Include="Assets\MyScripts\MenuSolver.cs" />
+     <Compile Include="Assets\MyScripts\PinController.cs" />
      <Compile Include="Assets\MyScripts\QuizContainer.cs" />
      <Compile Include="Assets\MyScripts\QuizPage.cs" />
      <Compile Include="Assets\MyScripts\QuizPageController.cs" />
      <Compile Include="Assets\MyScripts\QuizSolver.cs" />
-     <Compile Include="Assets\PinController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

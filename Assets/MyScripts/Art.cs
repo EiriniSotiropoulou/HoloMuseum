@@ -10,6 +10,7 @@ public class Art
     public string category;
 
     public string decription;
+    public string title;
     public string image;
 
 }

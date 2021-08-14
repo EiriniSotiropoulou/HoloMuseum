@@ -31,20 +31,6 @@ MonoBehaviour:
       description: Select
       axisConstraint: 2
   - localizationKey: 
-    keyword: Toggle Diagnostics
-    keyCode: 48
-    action:
-      id: 14
-      description: Toggle Diagnostics
-      axisConstraint: 0
-  - localizationKey: 
-    keyword: Toggle Profiler
-    keyCode: 57
-    action:
-      id: 15
-      description: Toggle Profiler
-      axisConstraint: 0
-  - localizationKey: 
     keyword: Quiz
     keyCode: 8
     action:
@@ -60,14 +46,21 @@ MonoBehaviour:
       axisConstraint: 0
   - localizationKey: 
     keyword: Hide
-    keyCode: 9
+    keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: Start
+    keyword: Intro
     keyCode: 27
+    action:
+      id: 0
+      description: None
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Place
+    keyCode: 9
     action:
       id: 0
       description: None

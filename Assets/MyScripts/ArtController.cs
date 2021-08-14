@@ -13,19 +13,19 @@ public class ArtController : MonoBehaviour
     public string category; 
     void Awake()
     {
-        ;// MyManager = gameObject.GetComponent<WorldAnchorManager>();
+        MyManager = gameObject.GetComponent<WorldAnchorManager>();
     }
 
 
     public void onPlace() //when the art is placed a spatial anchor is created or updated at the store
     {
-        //MyManager.AttachAnchor(gameObject);
+        MyManager.AttachAnchor(gameObject);
         Debug.Log("AnchorAttached");
     }
 
     public void onPickUp()//when the art is beign moved a spatial anchor is deleted at the store
     {
-        //MyManager.RemoveAnchor(gameObject);
+        MyManager.RemoveAnchor(gameObject);
         Debug.Log("AnchorRemoved");
     }
 

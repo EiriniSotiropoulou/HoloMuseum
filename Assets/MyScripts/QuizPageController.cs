@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit.UI;
+using TMPro;
 
 public class QuizPageController : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class QuizPageController : MonoBehaviour
         
         if (index == numOfPages - 2) 
         {
-            GameObject ButtonNextLabel = gameObject.transform.parent.GetChild(index + 1).transform.Find("ButtonNext").transform.GetChild(0).transform.Find("Label").gameObject;
+            GameObject ButtonNextLabel = gameObject.transform.parent.GetChild(index + 1).transform.Find("ButtonNext").transform.GetChild(0).transform.Find("Text").gameObject;
             //if it is the last page the next button says "Finish"
-            ButtonNextLabel.GetComponent<TextMesh>().text = "Finish";
+            ButtonNextLabel.GetComponent<TextMeshPro>().text = "Finish";
         }
 
 
@@ -48,7 +49,15 @@ public class QuizPageController : MonoBehaviour
             {
                 return;
             }
-            gameObject.transform.parent.GetChild(index + 1).transform.Find("GuideArrow").gameObject.SetActive(true);
+            if (index == numOfPages - 2) //the final page shouldnt show an arrow
+            {
+                gameObject.transform.parent.GetChild(index + 1).transform.Find("GuideArrow").gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.transform.parent.GetChild(index + 1).transform.Find("GuideArrow").gameObject.SetActive(true);
+            }
+            
         }
 
 
@@ -120,7 +129,7 @@ public class QuizPageController : MonoBehaviour
         else if (i3) selected = 3;
         else if (i4) selected = 4;
 
-        Debug.Log(selected);
+        //Debug.Log(selected);
         int[] message = { number, selected, correct };
         manager.SendMessage("SaveAnswer", message);
     }

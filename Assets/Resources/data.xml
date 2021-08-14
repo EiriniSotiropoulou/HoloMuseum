@@ -6,28 +6,131 @@
 	<intro>
 
 		<page number = "0">
-			<image>Pictures/Classical</image>
+			<image>Pictures/Materials/outside1</image>
 
-			<dialogue>Classical1!</dialogue>
-			<directional>0</directional>
+			<dialogue></dialogue>
+			<directional>-2</directional>
 
 		</page>
-
 		<page number = "1">
+			<image>Pictures/Materials/outside2</image>
+			
+			<dialogue></dialogue>
+			<directional>-2</directional>
+			
+		</page>
+		<page number = "2">
+			<image>Pictures/Materials/outside3</image>
 
-			<image>Pictures/Hellenistic</image>
+			<dialogue></dialogue>
+			<directional>-2</directional>
 
-			<dialogue>Hellenistic2</dialogue>
-			<directional>1</directional>
+		</page>
+		<page number = "3">
+			<image>Pictures/Materials/outside4</image>
+
+			<dialogue></dialogue>
+			<directional>-2</directional>
+
+		</page>
+		<page number = "4">
+			<image>Pictures/Materials/outside5</image>
+
+			<dialogue>
+			</dialogue>
+			<directional>-2</directional>
+
+		</page>
+		
+
+		<page number = "5">
+			<image>Pictures/Materials/Museum</image>
+
+			<dialogue>Welcome to HoloMuseum. Follow the arrows and study this introduction to learn more about Ancient Patras.
+			</dialogue>
+			<directional>-1</directional>
 
 		</page>
 
-		<page number = "2">
+				
+		<page number = "6">
+			<image>Pictures/Materials/ArchesMyc</image>
 
-			<image>Pictures/Geometric</image>
-
-			<dialogue>Geometric3</dialogue>
+			<dialogue>The Mycenaean Civilization (1600-1050 BC) particularly influenced Patras. Some of the vessels discovered, display characteristic patterns of fringed semi-circles and bridged motifs.</dialogue>
 			<directional>2</directional>
+		</page>
+		
+		<page number = "7">
+
+			<image>Pictures/Materials/ShapesGeometric</image>
+
+			<dialogue>Achaean Geometric (1050-700 BC) pottery shows the simplicity and austerity of the new era (new vessel shapes, schematized linear and geometric ornaments).  </dialogue>
+			<directional>4</directional>
+
+		</page>
+		
+		
+		<page number = "8">
+			<image>Pictures/Materials/ArchaicClassical</image>
+
+			<dialogue>During the Archaic (700-500 BC) and Classical Period (500-323 BC) pottery production focused on the depiction of the human figure. The black-figure and red-figure depictions represent mythological and devotional scenes. At the same time, simple black-glazed pottery was developed.</dialogue>
+			<directional>5</directional>
+
+		</page>
+
+		<page number = "9">
+
+			<image>Pictures/Materials/Hellenistic1</image>
+
+			<dialogue>During the Hellenistic Period (323 BC-146 BC) pictorial subjects ceased and floral subjects became more common at this time. Local production included the lagynos, which is a common vessel of the Late Hellenistic Period.</dialogue>
+			<directional>8</directional>
+
+		</page>
+
+
+		<page number = "10">
+
+			<image>Pictures/Materials/Roman</image> 
+
+			<dialogue>Patras experienced great prosperity during Roman Times and reached its peak during the 2nd century BC. It is usually the great public works and large-scale monuments of the period that are of particular interest.</dialogue>
+			<directional>-1</directional>
+
+		</page>
+
+		<page number = "11">
+
+			<image>Pictures/Materials/RomanPottery</image>
+
+			<dialogue>Terra sigillata (stamped earth) pottery is characteristic of the Roman Period. The most typical feature is the red -or orange- coloured clay and the glossy surface of the pots. </dialogue>
+			<directional>10</directional>
+
+		</page>
+		
+		<page number = "12">
+
+			<image>Pictures/Materials/RomanFarm</image>
+
+			<dialogue>In the museum we can find a reconstruction of a Roman farmhouse (villa rustica). Only the part where the wine was made is displayed. There are two rectangular cisterns. In the top one (linos), grapes were crashed and the must would gather at the lower cistern (ypolinio) through a small terracotta pipe. </dialogue>
+			<directional>12</directional>
+
+		</page>
+		
+		<page number = "13">
+
+			<image>Pictures/Materials/implivium</image>
+
+			<dialogue>A classic urban house in the Roman times had an atrium which was a main rectangular room with roof around it, a compluvium which was a square opening in the middle of the room, and an implivium, a tank below the complivium, where rain water gathered.</dialogue>
+			<directional>13</directional>
+
+		</page>
+		
+
+		<page number = "14">
+
+			<image>Pictures/Materials/Conclusion</image>
+
+			<dialogue>You can now look around on your own. Anytime you wish to start this introduction lesson again just say "Intro". If you're ready to start the final quiz say "Quiz".</dialogue>
+			<directional>-1</directional>
 
 		</page>
 
@@ -35,104 +138,243 @@
 	</intro>
 	<arts>
 
-		<art number="0" category="Classical">
+		<art number="0" category="Mycenaean">
 			
-			<decription>something about classical...</decription>
-
-			<image>Pictures/Classical</image>
+			<decription>Cylindrical Pyxis decorated with fringed semi-circles and bridged motifs. Discovered in Klaous. End of 12th-start of 11th century BC</decription>
+			<title>Cylindrical Compass</title>
+			<image>Pictures/Materials/Mycenaean1</image>
 			
 		</art>
 
-		<art number="1" category="Hellenistic">
+		<art number="1" category="Mycenaean">
 
-			<decription>hellenistic...</decription>
+			<decription>Amphora decorated with local pottery patterns, from Klaous. First half of 11th century BC</decription>
+			<title>Amphora with four handles</title>
+			<image>Pictures/Materials/Mycenaean2</image>
 
-			<image>Pictures/Hellenistic</image>
+		</art>
+
+		<art number="2" category="Mycenaean">
+
+			<decription>Large four-handled Mycenaean jar, produced in the Voudeni workshop. Pictorial scene with birds added to the local patterns of fringed semi-circles. First half of 11th century BC</decription>
+			<title>Amphora with birds</title>
+			<image>Pictures/Materials/Mycenaean3</image>
 
 		</art>
 
-		<art number="2" category="Geometric">
 
-			<decription>geometric...</decription>
+		<art number="3" category="Geometric">
 
-			<image>Pictures/Geometric</image>
+			<decription>Kantharos (drinking vessel) decorated with geometric motifs, from Drepano, Patras. 850 BC</decription>
+			<title>Kantharos</title>
+			<image>Pictures/Materials/Geometric1</image>
 
 		</art>
+
+
+		<art number="4" category="Geometric">
+
+			<decription>Large Krater (vessel for mixing liquids) with rich decoration, from Agyia, Patras. The layout can be divided in three horizontal bands. In the first and last band the layout is horizontal and in the middle band the layout is vertical.  Mid of 9th-start of 8th century BC</decription>
+			<title>Large Krater</title>
+			<image>Pictures/Materials/Geometric2</image>
+
+		</art>
+
+		<art number="5" category="Classical">
+
+			<decription>Fragment from the lip and the handle of black-glazed krater, showing the head of a bearded man. Kato Achaea, Archaic Period (Mid of 6th century BC)</decription>
+			<title>Fragment of Krater</title>
+			<image>Pictures/Materials/Classical1</image>
+
+		</art>
+		<art number="6" category="Classical">
+
+			<decription>Black glazed, Olympia type kylix (drinking vessel)  made in a solar studio in Patras. Classical Period</decription>
+			<title>Black-glazed Kylix</title>
+			<image>Pictures/Materials/Classical2</image>
+
+		</art>
+		<art number="7" category="Classical">
+
+			<decription>Black-figure Chimney Type lekythos (perfume bottle) showing a Dionysian scene, Agios Vassilios, Patras. Classical Period (480-470 BC)</decription>
+			<title>Black-glazed Lekythos</title>
+			<image>Pictures/Materials/Classical3</image>
+
+		</art>
+		
+		<art number="8" category="Hellenistic">
+
+			<decription>Lagynos decorated with flower shaped jewels, Patras, End of 2th-start of 1th century BC</decription>
+			<title>Flower themed Lagynos</title>
+			<image>Pictures/Materials/Hellenistic1</image>
+
+		</art>
+		
+		<art number="9" category="Hellenistic">
+
+			<decription>Characteristic vessel of the Hellenistic ages. Used for pouring wine and oil.</decription>
+			<title>Lagynos with tall spout</title>
+			<image>Pictures/Materials/Hellenistic2</image>
+
+		</art>
+		
+		<art number="10" category="RomanPottery">
+
+			<decription>Indicative vessel of the Hellenistic ages. Used for pouring wine and oil.</decription>
+			<title>Large red-glazed plate (African red-slip) with impressed decoaration on base (tableware). Patras, Late Roman Period, (end 4th-end 5th cent. A.D)</title>
+			<image>Pictures/Materials/Roman1</image>
+
+		</art>
+			
+		<art number="11" category="RomanPottery">
+
+			<decription>Large red-gloss plate (Terra Sigillata) with samped radial motif (tableware).  Patras, Roman Period, (1st cent. A.D) </decription>
+			<title>Large red-gloss plate</title>
+			<image>Pictures/Materials/Roman2</image>
+
+		</art>
+		
+		<art number="12" category="RomanArch">
+
+			<decription>Part of farmhouse (linos and hypolinium), from Patras (reconstruction). Roman times</decription>
+			<title>Farmhouse</title>
+			<image>Pictures/Materials/RomanFarm</image>
+
+		</art>
+		
+		<art number="13" category="RomanTown">
+
+			<decription>The atrium with the impluvium and the reception area, Patras (reconstruction), (1st - 3d cent. A.D)</decription>
+			<title>Urban house</title>
+			<image>Pictures/Materials/RomanUrban</image>
+
+		</art>		
+		
 		
 	</arts>
 	<quiz>
 		<page number="0">
 
-			<image>Pictures/Classical</image>
+			<image>Pictures/Materials/Classical2</image>
 			
-			<question>lalalalalalalalal</question>
+			<question>What time period is this vessel from?</question>
 
-			<answer1 >lolololo</answer1>
+			<answer1 >Archaic-Classical</answer1>
 
-			<answer2 >lililili</answer2>
+			<answer2 >Hellenistic</answer2>
 
-			<answer3>lililili</answer3>
+			<answer3>Roman</answer3>
 
-			<answer4 >lolololo</answer4>
+			<answer4>Geometric</answer4>
 
 			<correct>1</correct>
 
-			<directional>1</directional>
-			<directional1>0</directional1>
-			<directional2>1</directional2>
-			<directional3>2</directional3>
-			<directional4>3</directional4>
-			
-		</page>
+			<directional>5</directional>
 
+		</page>
+		
 		<page number="1">
 
-			<image>Pictures/Hellenistic</image>
+			<image>Pictures/Materials/RomanUrban</image>
+			
+			<question>What was the impluvium and what was it used for?</question>
 
-			<question>lolololololololo</question>
+			<answer1>A rectangular tank used to collect the wine must in Roman farmhouses</answer1>
 
-			<answer1 >lolololo</answer1>
+			<answer2>It was a tank in the reception area in some Roman Urban houses</answer2>
 
-			<answer2 >lililili</answer2>
+			<answer3>It was a room, also called atrium, and was used to gather the rain water</answer3>
 
-			<answer3>lililili</answer3>
+			<answer4>It was a tank below the compluvium, in the atrium</answer4>
 
-			<answer4 >lolololo</answer4>
+			<correct>4</correct>
 
-			<correct>1</correct>
-
-			<directional>2</directional>
-			<directional1>0</directional1> 
-			<directional2>1</directional2>
-			<directional3>2</directional3>
-			<directional4>3</directional4>
+			<directional>13</directional>
 
 		</page>
-
+		
 		<page number="2">
 
-			<image>Pictures/Geometric</image>
+			<image>Pictures/Materials/Roman2</image>
+			
+			<question>In what time period is this vessel most likely made?</question>
 
-			<question>lilililililili</question>
+			<answer1>Roman</answer1>
 
-			<answer1 >lolololo</answer1>
+			<answer2>Archaic-Classical</answer2>
 
-			<answer2 >lililili</answer2>
+			<answer3>Mycenaean</answer3>
 
-			<answer3>lililili</answer3>
-
-			<answer4 >lolololo</answer4>
+			<answer4>Hellenistic</answer4>
 
 			<correct>1</correct>
 
-			<directional>0</directional>
-			<directional1>0</directional1>
-			<directional2>1</directional2>
-			<directional3>2</directional3>
-			<directional4>3</directional4>
+			<directional>11</directional>
 
 		</page>
 
+		<page number="3">
+
+			<image>Pictures/Materials/Geometric2</image>
+			
+			<question>How many bands does this krater have and of what kind?</question>
+
+			<answer1>3, horizontal-vertical-horizontal</answer1>
+
+			<answer2>4, vertical-horizontal</answer2>
+
+			<answer3>3, horizontal-horizontal-vertical</answer3>
+
+			<answer4>4, horizontal-vertical-horizontal-vertical</answer4>
+
+			<correct>1</correct>
+
+			<directional>4</directional>
+
+		</page>
+		
+		<page number="4">
+
+			<image>Pictures/Materials/Hellenistic1</image>
+			
+			<question>This Lagynos, decorated with floral patterns, is an characteristic vessel of which period?</question>
+
+			<answer1>Mycenaean</answer1>
+
+			<answer2>Geometric</answer2>
+
+			<answer3>Roman</answer3>
+			
+			<answer4>Hellenistic</answer4>
+
+			<correct>4</correct>
+
+			<directional>8</directional>
+
+		</page>
+
+
+		<page number="5">
+
+			<image>Pictures/Materials/ArchesMyc</image>
+			
+			<question>What period were patterns of fringed semi-circles and bridged motifs, common decorations?</question>
+
+			<answer1>Hellenistic</answer1>
+
+			<answer2>Mycenaean</answer2>
+
+			<answer3>Archaic-Classical</answer3>
+
+			<answer4>Roman</answer4>
+
+			<correct>2</correct>
+
+			<directional>2</directional>
+
+		</page>
+		
+		
 
 	</quiz>
 

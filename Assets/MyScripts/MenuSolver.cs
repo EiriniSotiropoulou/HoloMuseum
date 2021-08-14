@@ -14,8 +14,14 @@ public class MenuSolver : Solver
         /*var reference = SolverHandler.TransformTarget;
         GoalPosition = reference.position + reference.forward * forward + reference.right * right + reference.up * vertical;*/
 
-        //if gaze is on either intro label or button stop the intro window from moving
-        if (CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(6).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(0).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(1).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(2).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(3).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(4).gameObject || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(5).gameObject)
+        //if gaze is on either intro window or any child stop the intro window from moving
+        if (CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject  
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(0).gameObject
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(1).gameObject 
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(2).transform.GetChild(0).gameObject 
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(3).transform.GetChild(0).gameObject
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(4).gameObject 
+            || CoreServices.InputSystem.GazeProvider.GazeTarget == gameObject.transform.GetChild(5).gameObject)
         {
             gameObject.GetComponent<RadialView>().enabled=false;
             //LogCurrentGazeTarget();
@@ -26,7 +32,7 @@ public class MenuSolver : Solver
         }
     }
 
-    void LogCurrentGazeTarget()
+     public void LogCurrentGazeTarget()
     {
         if (CoreServices.InputSystem.GazeProvider.GazeTarget)
         {

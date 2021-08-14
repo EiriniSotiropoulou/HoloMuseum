@@ -29,7 +29,7 @@ public class QuizContainer
         }
         catch (System.Exception e)
         {
-            Debug.LogWarningFormat("Error loading animation : {0}", e.Message);
+            //Debug.LogWarningFormat("Error loading animation : {0}", e.Message);
             return deserialized;
         }
 
